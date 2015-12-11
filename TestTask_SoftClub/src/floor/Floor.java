@@ -1,6 +1,5 @@
 package floor;
 
-import chance.Chance;
 import hero.Hero;
 import artefact.ExpBox;
 import artefact.HealthBox;
@@ -15,19 +14,17 @@ import java.util.Random;
  */
 public class Floor implements Serializable{
 
-    private int floorNumber = 0;
-    private Monster monster;
+    private final Monster monster;
     private boolean isFight = false;
     private boolean isTakePrize = false;
 
-    final Random random = new Random();
+    private final Random random = new Random();
 
     /**
      * Create Floor with monster.
      */
     public Floor(int floorNumber) {
-        this.floorNumber = floorNumber;
-        monster = new Monster(this.floorNumber);
+        monster = new Monster(floorNumber);
     }
 
     public Monster getMonster() { return monster; }
@@ -138,7 +135,7 @@ public class Floor implements Serializable{
             isFight = true;
             hero.getChance().switchChance();
             System.out.println("You won monster" + monster.getMonsterName());
-            int countExp = (int) (monster.getMonsterHealth() / hero.getHeroHit());
+            int countExp = monster.getMonsterHealth() / hero.getHeroHit();
             hero.upExp(countExp);
             System.out.println(hero.getHeroName() + " experience +" + countExp);
         }

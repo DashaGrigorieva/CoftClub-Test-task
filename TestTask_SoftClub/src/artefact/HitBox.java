@@ -10,13 +10,13 @@ import java.util.Random;
  */
 public class HitBox implements Artefact , Serializable{
 
-    final Random random = new Random();
-    private int upHit;
+    private final int upHit;
 
     /**
      * Create HitBox.
      */
     public HitBox() {
+        Random random = new Random();
         upHit = random.nextInt(10)+1;
     }
 

@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Created by User on 11.12.2015.
@@ -55,7 +56,7 @@ public class Game implements Serializable {
 
             String switcher = "10";
 
-            while (switcher != "0") {
+            while (!Objects.equals(switcher, "0")) {
 
                 System.out.println("\n 1 : Fight with the monster\n" +
                         " 2 : Get prize\n" +

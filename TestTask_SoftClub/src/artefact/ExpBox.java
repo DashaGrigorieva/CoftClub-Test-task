@@ -10,13 +10,13 @@ import java.util.Random;
  */
 public class ExpBox implements Artefact , Serializable{
 
-    final Random random = new Random();
-    private int upExp;
+    private final int upExp;
 
     /**
      * Create ExpBox.
      */
     public ExpBox() {
+        Random random = new Random();
         upExp = random.nextInt(5) + 1;
     }
 
@@ -33,7 +33,7 @@ public class ExpBox implements Artefact , Serializable{
      */
     @Override
     public String toString() {
-        return " Magic Box! Experiense : +" + upExp;
+        return " Magic Box! Experience : +" + upExp;
     }
 
 }

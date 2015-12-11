@@ -8,6 +8,7 @@ import java.io.Serializable;
 /**
  * Created by User on 10.12.2015.
  */
+@SuppressWarnings("ALL")
 public class Hero implements Serializable{
 
     private String heroName = "NONAME";
@@ -73,7 +74,7 @@ public class Hero implements Serializable{
      * Hero alive - true.
      */
     public boolean isHeroAlive() {
-        return heroHealth <= 0 ? false : true;
+        return heroHealth > 0;
     }
 
     /**

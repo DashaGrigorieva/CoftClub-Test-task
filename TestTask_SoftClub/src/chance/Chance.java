@@ -7,6 +7,7 @@ import java.io.Serializable;
 /**
  * Created by User on 11.12.2015.
  */
+@SuppressWarnings("ALL")
 public class Chance implements Serializable{
 
     private boolean exist = false;
@@ -19,25 +20,26 @@ public class Chance implements Serializable{
     /**
      * Chance allow hero not to fight with monster if hero level >= 3.
      */
+    @SuppressWarnings("RedundantConditionalExpression")
     public boolean useChance(Hero hero) {
-        return hero.getHeroLevel() < 3 ? false : true;
+        //noinspection RedundantConditionalExpression
+        return hero.getHeroLevel() >= 3;
     }
 
     /**
      * Take or use chance.
      */
     public void switchChance() {
-        if(exist)
-            exist = false;
-        else
-            exist = true;
+        exist = !exist;
     }
 
     /**
      * Is chance exist.
      */
+    @SuppressWarnings("RedundantConditionalExpression")
     public boolean isExist() {
-        return exist ? true : false;
+        //noinspection RedundantConditionalExpression
+        return exist;
     }
 
     /**

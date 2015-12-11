@@ -13,9 +13,8 @@ public class Monster implements Serializable{
     private String monsterName = "NONAME";
     private int monsterHit = 10;
     private int monsterHealth = 100;
-    private int monsterLevel = 0;
 
-    final Random random = new Random();
+    private final Random random = new Random();
 
     public int getMonsterHit() { return monsterHit; }
     public int getMonsterHealth() { return monsterHealth; }
@@ -93,7 +92,7 @@ public class Monster implements Serializable{
      * Monster died - true.
      */
     public boolean isMonsterAlive() {
-        return monsterHealth <= 0 ? false : true;
+        return monsterHealth > 0;
     }
 
     /**
